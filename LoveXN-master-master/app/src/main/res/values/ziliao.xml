@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="user_name">tom</string>
+    <string name="user_phone"></string>
+    <string name="user_mail"></string>
+    <integer name="user_academy_number">1</integer>//学院
+    <string name="user_password"></string>
+    <integer name="user_address_province">1</integer>
+    <string name="user_address_city"></string>
+    <string name="user_sex">"男"</string>
+    <integer name="user_avatar">2</integer>
+    <integer name="user_type">1</integer>
+    <integer name="user_id">1</integer>
+    <integer name="user_age">6</integer>
+    <integer name="user_major">1</integer>
+    <string name="user_shuo">"此生已入江湖，莫回顾，君行君去处"</string>
+    <integer name="user_city">1</integer>
+    <string name="loveXNurl">http://172.17.66.170/love_nwsuaf/</string>
+</resources>

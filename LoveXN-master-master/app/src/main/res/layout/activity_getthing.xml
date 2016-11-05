@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:weightSum="1"
+    android:background="#e7ece6">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:gravity="center|left">
+        <TextView
+            android:id="@+id/textsw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="寻物搜索   "
+            android:textColor="@color/v5_black"
+            android:layout_marginLeft="60dp"
+            android:textSize="19dp"/>
+        <EditText
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/textsw"
+            android:background="@drawable/kuang"/>
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+
+            android:background="@drawable/fangda"
+            />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="fill_parent"
+            android:background="@color/v5_transparent"/>
+        <me.itangqi.buildingblocks.widget.RefreshListView
+            android:id="@+id/getviewsw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:divider="#00ffffff"
+            android:listSelector="#88d0ff"
+            android:dividerHeight="30px"></me.itangqi.buildingblocks.widget.RefreshListView>
+        <TextView
+            android:layout_width="20dp"
+            android:layout_height="fill_parent"
+            android:background="@color/v5_transparent"/>
+    </LinearLayout>
+</LinearLayout>

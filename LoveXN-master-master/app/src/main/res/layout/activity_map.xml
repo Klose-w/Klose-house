@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:weightSum="1">
+
+
+ <com.baidu.mapapi.map.MapView
+     android:id="@+id/mapview"
+     android:layout_width="fill_parent"
+     android:layout_height="fill_parent"
+     >
+ </com.baidu.mapapi.map.MapView>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:stretchColumns="0,1,2"
+        android:layout_alignParentBottom="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="到校路线"
+                android:id="@+id/line" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="定位南校"
+                android:id="@+id/south" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="到校路线"
+                android:id="@+id/button3" />
+        </TableRow>
+    </TableLayout>
+
+    <SearchView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/searchView"
+        android:layout_alignParentTop="true"
+        android:background="#e0ffffff"
+        android:queryHint="校内搜索"
+        android:layout_centerHorizontal="true" >
+
+    </SearchView>
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchView"></ListView>
+
+</RelativeLayout>

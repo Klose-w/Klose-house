@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kuang"
+    android:descendantFocusability= "blocksDescendants">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+
+        android:layout_marginLeft="5dp"
+
+        >
+        <TextView
+            android:id="@+id/getthing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="校园卡"
+            android:textSize="15dp"
+            android:textColor="#44aaaa"
+            android:layout_gravity="left|center"
+           />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="15dp"
+            android:textColor="#44aaaa"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/getstate"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="未找到"
+            android:textSize="15dp"
+            android:textColor="#aa0000"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_marginLeft="5dp">
+        <TextView
+            android:id="@+id/getintro"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:textSize="17dp"
+            android:textColor="@color/v5_black"
+            android:text="丢失了一张校园卡"
+            />
+    </LinearLayout>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="拾取时间:"
+            android:textSize="12dp"/>
+        <TextView
+            android:id="@+id/gettime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016-4-15"
+
+            android:textSize="12dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地点:"
+            android:textSize="12dp"/>
+        <TextView
+            android:id="@+id/getspace"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:text="北校操场"
+            android:textSize="12dp"/>
+    </LinearLayout>
+</LinearLayout>

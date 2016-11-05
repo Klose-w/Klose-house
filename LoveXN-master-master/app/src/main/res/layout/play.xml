@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability= "blocksDescendants">
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:orientation="horizontal"
+       android:layout_height="40dp"
+       android:layout_marginLeft="@dimen/margin_4dp"
+       android:layout_marginTop="@dimen/margin_8dp">
+       <me.itangqi.buildingblocks.widget.CircleImageView
+           android:layout_width="40dp"
+           android:layout_height="40dp"
+           android:id="@+id/ptoux"
+           android:src="@drawable/toux"/>
+       <LinearLayout
+           android:layout_width="fill_parent"
+           android:layout_height="40dp"
+           android:orientation="vertical"
+           android:layout_marginLeft="@dimen/margin_8dp">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="#000000"
+               android:id="@+id/pname" />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/pftime"/>
+       </LinearLayout>
+   </LinearLayout>
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_4dp"
+        android:layout_marginTop="@dimen/margin_4dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/huodong"
+                 />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textColor="#000000"
+
+                android:id="@+id/playname" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/shizhong"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textColor="#000000"
+                android:id="@+id/playtime" />
+        </TableRow>
+    </TableLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/margin_16dp"
+       >
+        <ImageView
+            android:id="@+id/iam"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/dingwei"
+            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true" />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="@dimen/margin_4dp"
+           android:textSize="12dp"
+           android:layout_gravity="bottom"
+           android:layout_alignParentBottom="true"
+           android:id="@+id/pla"
+           android:layout_toRightOf="@+id/iam"/>
+        <ImageButton
+            android:id="@+id/wen"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="bottom"
+            android:layout_marginRight="@dimen/margin_16dp"
+            android:layout_marginEnd="60dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:focusable="false"
+            android:background="@drawable/wen"/>
+        <ImageButton
+            android:id="@+id/dzan"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/wen"
+            android:layout_toStartOf="@+id/wen"
+            android:layout_marginEnd="15dp"
+            android:focusable="false"
+            android:background="@drawable/dzan"/>
+        <ImageButton
+            android:id="@+id/zan"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_alignParentTop="true"
+            android:focusable="false"
+            android:layout_toStartOf="@+id/dzan"
+            android:background="@drawable/zan"/>
+      </RelativeLayout>
+
+
+</LinearLayout>
