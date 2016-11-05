@@ -193,7 +193,7 @@ public class ZiliaoActivity extends Activity {
         txcity= (TextView) findViewById(R.id.textView6);
         txsex= (TextView) findViewById(R.id.textView7);
         iv=(ImageView)findViewById(R.id.backbf);
-        AnimationDrawable ad = (AnimationDrawable) getResources().getDrawable(R.anim.backstory1);
+        AnimationDrawable ad = (AnimationDrawable) getResources().getDrawable(R.drawable.backstory1);
         iv.setBackgroundDrawable(ad);
         ad.start();
 

@@ -16,4 +16,6 @@
     <string name="user_shuo">"此生已入江湖，莫回顾，君行君去处"</string>
     <integer name="user_city">1</integer>
     <string name="loveXNurl">http://172.17.66.170/love_nwsuaf/</string>
+    <bool name="ischeck">false</bool>
+    <bool name="auto">false</bool>
 </resources>

@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     @Bind(R.id.et_username)
     EditText username;
     @Bind(R.id.et_password)
+
     EditText userpassword;
     @Bind(R.id.bt_go)
     Button btGo;
@@ -46,6 +47,9 @@ public class LoginActivity extends AppCompatActivity {
     FloatingActionButton fab;
     @Bind(R.id.remember)
     CheckBox remember;
+    @Bind(R.id.auto)
+    CheckBox auto;
+
     ProgressDialog proDialog;
     String stUserName;
     String stPassWord;
@@ -78,22 +82,19 @@ public class LoginActivity extends AppCompatActivity {
                     Gson gson = new Gson();
                     Userinfo userinfo = gson.fromJson(test, Userinfo.class);
 
-                        sp.edit().putString("user_mail", stUserName).commit();
-                        sp.edit().putString("user_password", stPassWord).commit();
-                        sp.edit().putString("user_name", userinfo.getUser_name()).commit();
-                        sp.edit().putString("user_phone", userinfo.getUser_phone()).commit();
-                        sp.edit().putInt("user_academy_number", userinfo.getUser_academy_number()).commit();
-                        sp.edit().putInt("user_id", userinfo.getUser_id()).commit();
-                        sp.edit().putInt("user_address_province", userinfo.getUser_address_province()).commit();
-                        sp.edit().putString("user_address_city", userinfo.getUser_address_city()).commit();
-                        sp.edit().putString("user_sex", userinfo.getUser_sex()).commit();
-                        sp.edit().putInt("user_avatar", userinfo.getUser_avatar()).commit();
-                        sp.edit().putInt("user_type", userinfo.getUser_type()).commit();
-                        sp.edit().putInt("user_id", userinfo.getUser_id()).commit();
-
-
+                    sp.edit().putString("user_mail", stUserName).commit();
+                    sp.edit().putString("user_password", stPassWord).commit();
+                    sp.edit().putString("user_name", userinfo.getUser_name()).commit();
+                    sp.edit().putString("user_phone", userinfo.getUser_phone()).commit();
+                    sp.edit().putInt("user_academy_number", userinfo.getUser_academy_number()).commit();
+                    sp.edit().putInt("user_id", userinfo.getUser_id()).commit();
+                    sp.edit().putInt("user_address_province", userinfo.getUser_address_province()).commit();
+                    sp.edit().putString("user_address_city", userinfo.getUser_address_city()).commit();
+                    sp.edit().putString("user_sex", userinfo.getUser_sex()).commit();
+                    sp.edit().putInt("user_avatar", userinfo.getUser_avatar()).commit();
+                    sp.edit().putInt("user_type", userinfo.getUser_type()).commit();
+                    sp.edit().putInt("user_id", userinfo.getUser_id()).commit();
                     finish();
-
                 }else{
                     if(test.contains("100005")){
                         Toast.makeText(LoginActivity.this, "该用户未注册", Toast.LENGTH_SHORT).show();
@@ -107,23 +108,48 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
-        if (sp.getBoolean("ISCHECK", false)) {
-            username.setText(sp.getString("USER_NAME", ""));
-            userpassword.setText(sp.getString("PASSWORD", ""));
-
+        if (sp.getBoolean("auto",false)){
+            stUserName = sp.getString("user_mail","");
+            stPassWord = sp.getString("user_password","");
+            TestLogin(stUserName,stPassWord);
             remember.setChecked(true);
+            auto.setChecked(true);
+        }
+        else if (sp.getBoolean("ischeck", false)) {
+            username.setText(sp.getString("user_mail", ""));
+            userpassword.setText(sp.getString("user_password", ""));
+            remember.setChecked(true);
+            auto.setChecked(false);
         } else {
-            username.setText(sp.getString("USER_NAME", ""));
+            username.setText(sp.getString("user_mail", ""));
             userpassword.setText("");
+            auto.setChecked(false);
+            remember.setChecked(false);
         }
 
         remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (remember.isChecked()) {
-                    sp.edit().putBoolean("ISCHECK", true).commit();
+                if (b) {
+                    sp.edit().putBoolean("ischeck", true).commit();
                 } else {
-                    sp.edit().putBoolean("ISCHECK", false).commit();
+                    sp.edit().putBoolean("ischeck", false).commit();
+                    auto.setChecked(false);
+                }
+            }
+        });
+
+        auto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    sp.edit().putBoolean("auto", true).commit();
+                    sp.edit().putBoolean("ischeck", true).commit();
+                    remember.setChecked(true);
+                }else{
+                    sp.edit().putBoolean("auto", false).commit();
+                    sp.edit().putBoolean("ischeck", false).commit();
+                    remember.setChecked(false);
                 }
             }
         });
@@ -138,8 +164,6 @@ public class LoginActivity extends AppCompatActivity {
         map.put("login_passwd", "" + stPassWord);
         new HttpThreadString(handler,getApplicationContext(),map,proDialog).start();
         createProgressBar();
-
-
 
     }
 
@@ -175,8 +199,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, RegisterActivity.class), options.toBundle());
                 break;
             case R.id.bt_go:
-                 stUserName = username.getText().toString();
-                 stPassWord = userpassword.getText().toString();
+                stUserName = username.getText().toString();
+                stPassWord = userpassword.getText().toString();
                 TestLogin(stUserName, stPassWord);
                 break;
             case R.id.tv_losepasswd:
@@ -185,8 +209,6 @@ public class LoginActivity extends AppCompatActivity {
                 ActivityOptions options1 =ActivityOptions.makeSceneTransitionAnimation(this, fab, fab.getTransitionName());
                 startActivity(new Intent(this, LostPasswdActivity.class), options1.toBundle());
                 break;
-
-
         }
     }
 }
